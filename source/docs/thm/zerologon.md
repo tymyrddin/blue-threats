@@ -24,32 +24,40 @@ an individual (or group).
 |:--:|
 | Simplified Netlogon authentication handshake |
 
-| ![The Zerologon attack](../../_static/images/zerologon-attack.png) |
-|:--:|
-| The Zerologon attack, which effectively boils down to filling particular message parameters with <br>zeroes and retrying the handshake a few times in order to set an empty computer password on the DC. |
-
-Step 1. The client creates a NetrServerReqChallenge and sends it off with values:
+Step 1. The client creates a `NetrServerReqChallenge` and sends it off with values:
 
 1. The DC
 2. The Target Device (Also the DC, in our case)
 3. A Nonce (In our case 16 Bytes of Zero).
 
-Step 2. The server receives the NetrServerReqChallenge, the server will then generate its own Nonce (This is called the Server Challenge), the server will send the Server Challenge back.
+Step 2. The server receives the `NetrServerReqChallenge`, the server will then generate its own Nonce (This is 
+called the `Server Challenge`), and will send the Server Challenge back.
 
-Step 3. The client (us) will compute it's NetLogon Credentials with the Server Challenge provided. It uses the NetrServerAuthenticate3 method which requires the following parameters:
+Step 3. The client will compute its `NetLogon Credentials` with the `Server Challenge` provided. It uses the 
+`NetrServerAuthenticate3` method which requires the following parameters:
 
 1. A Custom Binding Handle (Impacket handles this for us, it's negotiated prior)
-2. An Account Name (The Domain Controller's machine account name. ex: DC01$)
+2. An Account Name (The Domain Controller's machine account name. ex: `DC01$`)
 3. A Secure Channel Type (Impacket sort of handles this for us, but we still need to specify it: `nrpc.NETLOGON_SECURE_CHANNEL_TYPE.ServerSecureChannel`)
-4. The Computer Name (The Domain Controller ex: DC01)
-5. The Client Credential String (this will be 8 hextets of \x00 (16 Bytes of Zero))  
-6. Negotiation Flags (The following value observed from a Win10 client with Sign/Seal flags disabled: 0x212fffff Provided by Secura)
+4. The Computer Name (The Domain Controller ex: `DC01`)
+5. The Client Credential String (this will be 8 hextets of `\x00` (16 Bytes of Zero))  
+6. Negotiation Flags (The following value observed from a Win10 client with Sign/Seal flags disabled: `0x212fffff` Provided by Secura)
 
-Step 4. The server will receive the NetrServerAuthenticate request and will compute the same request itself using it's known, good values. If the results are good, the server will send the required info back to the client. 
+Step 4. The server will receive the `NetrServerAuthenticate` request and will compute the same request itself using 
+it's known, good values. If the results are good, the server will send the required info back to the client. 
 
-At this point the attempt to exploit the Zero Logon vulnerability is under way. The above steps above will be looped through a certain number of times to attempt to exploit the Zero Logon vulnerability. The actual exploit occurs at Step 3 and 4, this where we're hoping for the Server to a have the same computations as the client. This is where are 1-in-256 chance comes in.
+At this point the attempt to exploit the Zero Logon vulnerability is under way. The above steps above will be looped 
+through a certain number of times to attempt to exploit the Zero Logon vulnerability. The actual exploit occurs at 
+Step 3 and 4, where we are hoping for the Server to a have the same computations as the client. This is where the 
+1-in-256 chance comes in.
 
-Step 5. If the server calculates the same value, the client will re-verify and once mutual agreement is confirmed, they will agree on a session key. The session key will be used to encrypt communications between the client and the server, which means authentication is successful. 
+| ![The Zerologon attack](../../_static/images/zerologon-attack.png) |
+|:--:|
+| The Zerologon attack, which effectively boils down to filling particular message parameters with <br>zeroes and retrying the handshake a few times in order to set an empty computer password on the DC. |
+
+Step 5. If the server calculates the same value, the client will re-verify and once mutual agreement is confirmed, 
+they will agree on a `session key`. The session key will be used to encrypt communications between the client and the 
+server, which means authentication is successful. 
 
 ## Instantly Become Domain Admin
 
