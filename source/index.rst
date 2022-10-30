@@ -41,6 +41,14 @@ Threat and vulnerability management
    docs/yara/yargen.md
 
 .. toctree::
+   :maxdepth: 1
+   :includehidden:
+   :caption: THM Capture The Flag
+
+   docs/thm/README.md
+   docs/thm/zerologon.md
+
+.. toctree::
    :caption: Links
 
    Blue Team <https://tymyrddin.github.io/blue/>
