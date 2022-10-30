@@ -10,3 +10,8 @@ Nessus does not make assumptions when scanning, like assuming the web applicatio
 
 ## How?
 
+* [Installation on Debian/Kali and Ubuntu](install.md)
+* [Host discovery](host.md)
+* [Network scan](network.md)
+* [Web application scan](application.md)
+
