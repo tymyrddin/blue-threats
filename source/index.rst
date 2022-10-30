@@ -20,6 +20,19 @@ Threat and vulnerability management
    :glob:
    :maxdepth: 1
    :includehidden:
+   :caption: MITRE
+
+   docs/mitre/README.md
+   docs/mitre/attack.md
+   docs/mitre/car.md
+   docs/mitre/engage.md
+   docs/mitre/defend.md
+   docs/mitre/engenuity.md
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :includehidden:
    :caption: YARA
 
    docs/yara/README.md
