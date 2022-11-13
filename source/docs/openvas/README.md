@@ -11,4 +11,5 @@ servers or applications.
 
 ## How?
 
-
+* [Scanning infrastructure](infrastructure.md)
+* [Reporting and continuous monitoring](monitoring.md)

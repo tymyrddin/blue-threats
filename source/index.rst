@@ -47,6 +47,8 @@ Threat and vulnerability management
    :caption: OPENVAS
 
    docs/openvas/README.md
+   docs/openvas/infrastructure.md
+   docs/openvas/monitoring.md
 
 .. toctree::
    :glob:
