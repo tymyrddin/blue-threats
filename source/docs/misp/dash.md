@@ -54,3 +54,9 @@ Some essential options to note are:
 
 Once the analysts have created events, the organisation admin will review and publish those events to add them to the pool of events. This will also share the events to the distribution channels set during the creation of the events.
 
+## Resources
+
+* [MISP Book](https://www.circl.lu/doc/misp/)
+* [MISP GitHub](https://github.com/MISP/)
+* [CIRCL MISP Training Module 1](https://www.youtube.com/watch?v=aM7czPsQyaI)
+* [CIRCL MISP Training Module 2](https://www.youtube.com/watch?v=Jqp8CVHtNVk)

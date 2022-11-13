@@ -1,8 +1,7 @@
 Threat and vulnerability management
 ===============================================================
 
-.. image:: _static/images/in-progress.png
-  :alt: In progress ...
+
 
 .. toctree::
    :glob:
