@@ -2,7 +2,8 @@
 
 ## What?
 
-OpenVAS is an application used to scan endpoints and web applications to identify and detect vulnerabilities. 
+[OpenVAS](https://greenbone.github.io/docs/latest/) is an application used to scan endpoints and web applications to 
+identify and detect vulnerabilities. 
 
 ## Why?
 
