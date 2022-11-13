@@ -41,6 +41,22 @@ Threat and vulnerability management
    docs/yara/yargen.md
 
 .. toctree::
+   :glob:
+   :maxdepth: 1
+   :includehidden:
+   :caption: OPENVAS
+
+   docs/openvas/README.md
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :includehidden:
+   :caption: MISP
+
+   docs/misp/README.md
+
+.. toctree::
    :maxdepth: 1
    :includehidden:
    :caption: THM Capture The Flag
