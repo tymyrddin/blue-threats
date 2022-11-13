@@ -4,14 +4,14 @@
 |:--:|
 | [https://tryhackme.com/room/zer0logon](https://tryhackme.com/room/zer0logon) |
 
-On September 14, Secura released a whitepaper for CVE-2020-1472, that allowed an attacker to go from Zero to Domain 
-Admin in approximately one minute. They dubbed this vulnerability Zero Logon.
+On September 14, Secura released a whitepaper for [CVE-2020-1472](https://nvd.nist.gov/vuln/detail/CVE-2020-1472), 
+that allowed an attacker to go from Zero to Domain Admin in approximately one minute. They dubbed this vulnerability Zero Logon.
 
-Zero Logon is a purely statistics based attack that abuses a feature within MS-NRPC (Microsoft NetLogon Remote 
-Protocol), MS-NRPC is a critical authentication component of Active Directory that handles authentication for User 
+Zero Logon is a purely statistics based attack that abuses a feature within `MS-NRPC` (Microsoft NetLogon Remote 
+Protocol), `MS-NRPC` is a critical authentication component of Active Directory that handles authentication for User 
 and Machine accounts. In short -- the attack mainly focuses on a poor implementation of Cryptography. To be more 
-specific, Microsoft chose to use AES-CFB8 for a function called ComputeNetlogonCredential, which is normally fine, 
-except they had hard coded the Initialization Vector to use all zeros instead of a random string. When an attacker 
+specific, Microsoft chose to use `AES-CFB8` for a function called `ComputeNetlogonCredential`, which is normally fine, 
+except they had hard coded the `Initialization Vector` to use all zeros instead of a random string. When an attacker 
 sends a message only containing zeros with the IV of zero, there is a 1-in-256 chance that the Ciphertext will be Zero.
 
 In this room, the ZeroLogon vulnerability is approached from a "Proof of Concept" (PoC) emphasis, providing a 
@@ -28,9 +28,9 @@ Step 1. The client creates a `NetrServerReqChallenge` and sends it off with valu
 
 1. The DC
 2. The Target Device (Also the DC, in our case)
-3. A Nonce (In our case 16 Bytes of Zero).
+3. A `Nonce` (In this case 16 Bytes of Zero).
 
-Step 2. The server receives the `NetrServerReqChallenge`, the server will then generate its own Nonce (This is 
+Step 2. The server receives the `NetrServerReqChallenge`, the server will then generate its own `Nonce` (This is 
 called the `Server Challenge`), and will send the Server Challenge back.
 
 Step 3. The client will compute its `NetLogon Credentials` with the `Server Challenge` provided. It uses the 
@@ -204,7 +204,7 @@ Nmap done: 1 IP address (1 host up) scanned in 162.80 seconds
            Raw packets sent: 1004 (44.152KB) | Rcvd: 1001 (40.080KB)
 ```
 
-Get the python script:
+Get the `zeroLogon-NullPass.py` python script:
 
     wget https://raw.githubusercontent.com/Sq00ky/Zero-Logon-Exploit/master/zeroLogon-NullPass.py
 
