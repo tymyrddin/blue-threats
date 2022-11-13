@@ -13,7 +13,7 @@ Sharing of structured threat information with security analysts, malware researc
 
 ## How?
 
-* [Using the system](usage.md)
+* [Dashboard](dash.md)
 * [Feeds](feeds.md)
 * [Taxonomies](taxonomies.md)
 * [Tagging](tagging.md)

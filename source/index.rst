@@ -57,7 +57,7 @@ Threat and vulnerability management
    :caption: MISP
 
    docs/misp/README.md
-   docs/misp/usage.md
+   docs/misp/dash.md
    docs/misp/feeds.md
    docs/misp/taxonomies.md
    docs/misp/tagging.md

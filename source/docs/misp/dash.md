@@ -1,4 +1,4 @@
-# Using the system
+# Dashboard
 
 MISP is effectively useful for the following use cases:
 
