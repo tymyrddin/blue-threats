@@ -1,18 +1,7 @@
 Threat and vulnerability management
 ===============================================================
 
-Vulnerability intelligence is just one stage in the vulnerability management lifecycle. Where many organisations
-fall flat is having a vulnerability intelligence program without an actionable vulnerability management strategy –
-or vice versa.
-
-Vulnerability intelligence will only tell you what the current vulnerabilities are and what type of risk these
-vulnerabilities present. It won’t, however, tell you what to do about them or whether you should do anything at all.
-That is all part of the ongoing cycle of vulnerability management. Likewise vulnerability management without
-intelligence can’t tell you which vulnerabilities exist at all.
-
-When it comes to building a threat intelligence and vulnerability management strategy, there are a few best practices
-to get started: Plan ahead with room for flexibility; Understand threat priorities; *Strategically* patch and apply
-updates.
+Identify how attackers are developing their techniques to use in a defensive strategy.
 
 .. toctree::
    :glob:
