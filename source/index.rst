@@ -72,4 +72,4 @@ Identify how attackers are developing their techniques to use in a defensive str
 .. toctree::
    :caption: Links
 
-   Blue Team <https://tymyrddin.github.io/blue/>
+   Blue Team <https://blue.tymyrddin.dev/>
