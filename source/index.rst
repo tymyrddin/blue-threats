@@ -1,7 +1,14 @@
 Threat and vulnerability management
 ===============================================================
 
-Identify how attackers are developing their techniques to use in a defensive strategy.
+Identifying and using available security knowledge to mitigate and manage potential adversary actions.
+
+----
+
+.. image:: _static/images/threat-management-books.png
+  :alt: Useful books
+
+----
 
 .. toctree::
    :glob:
